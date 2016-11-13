@@ -1,13 +1,14 @@
 import Vapor
+import VaporMySQL
 
 let drop = Droplet()
 
-drop.get { req in
-    return try drop.view.make("welcome", [
-    	"message": drop.localization[req.lang, "welcome", "title"]
-    ])
-}
+//Database Set Up
+try drop.addProvider(VaporMySQL.Provider.self)
+drop.preparations.append(Account.self)
 
-drop.resource("posts", PostController())
+//API
+let api = ApiCollection()
+drop.collection(api)
 
 drop.run()
