@@ -16,4 +16,8 @@ let api = API()
 drop.collection(api)
 
 
+//MARK: Website
+let website = Website()
+drop.collection(website)
+
 drop.run()
