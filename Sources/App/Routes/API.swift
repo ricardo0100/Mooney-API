@@ -2,12 +2,13 @@ import Vapor
 import HTTP
 import Routing
 
-class ApiCollection: RouteCollection {
+class API: RouteCollection {
 
     let accountsController = AccountsController()
 
     typealias Wrapped = HTTP.Responder
-    func build<B: RouteBuilder where B.Value == Wrapped>(_ builder: B) {
+    
+    func build<B: RouteBuilder>(_ builder: B) where B.Value == Wrapped {
         let api = builder.grouped("api")
         let accounts = api.grouped("accounts")
 

@@ -3,12 +3,17 @@ import VaporMySQL
 
 let drop = Droplet()
 
-//Database Set Up
+
+//MARK: Database
 try drop.addProvider(VaporMySQL.Provider.self)
 drop.preparations.append(Account.self)
+drop.preparations.append(Category.self)
+drop.preparations.append(Transaction.self)
 
-//API
-let api = ApiCollection()
+
+//MARK: API
+let api = API()
 drop.collection(api)
+
 
 drop.run()
