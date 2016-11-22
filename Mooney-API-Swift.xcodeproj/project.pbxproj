@@ -13,6 +13,9 @@
 		BA8633161DDEFEFC00330C85 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633101DDEFEF600330C85 /* Category.swift */; };
 		BA8633171DDEFEFC00330C85 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633111DDEFEF600330C85 /* Transaction.swift */; };
 		BA8633191DDF02BD00330C85 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633181DDF02BD00330C85 /* Website.swift */; };
+		BA8633211DDF0D5A00330C85 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633201DDF0D5A00330C85 /* CategoriesController.swift */; };
+		BA8633231DDF0D6800330C85 /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633221DDF0D6800330C85 /* TransactionsController.swift */; };
+		BAED59F31DE46E8700E5FE1C /* NotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED59F21DE46E8700E5FE1C /* NotEmpty.swift */; };
 		OBJ_1405 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1406 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
 		OBJ_1407 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Box.swift */; };
@@ -5034,6 +5037,9 @@
 		BA8633111DDEFEF600330C85 /* Transaction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Transaction.swift; path = Models/Transaction.swift; sourceTree = "<group>"; };
 		BA8633181DDF02BD00330C85 /* Website.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Website.swift; path = ../Routes/Website.swift; sourceTree = "<group>"; };
 		BA86331F1DDF07C000330C85 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Resources/Views/index.html; sourceTree = "<group>"; };
+		BA8633201DDF0D5A00330C85 /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesController.swift; path = Controllers/CategoriesController.swift; sourceTree = "<group>"; };
+		BA8633221DDF0D6800330C85 /* TransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionsController.swift; path = Controllers/TransactionsController.swift; sourceTree = "<group>"; };
+		BAED59F21DE46E8700E5FE1C /* NotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmpty.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
 		OBJ_1000 /* Console+ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Console+ProgressBar.swift"; sourceTree = "<group>"; };
@@ -7063,6 +7069,8 @@
 			isa = PBXGroup;
 			children = (
 				BA8633081DDEFEC900330C85 /* AccountsController.swift */,
+				BA8633201DDF0D5A00330C85 /* CategoriesController.swift */,
+				BA8633221DDF0D6800330C85 /* TransactionsController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -7079,6 +7087,7 @@
 		BA8633061DDEFE8800330C85 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BAED59EF1DE46BB100E5FE1C /* Validation */,
 				BA86330F1DDEFEF600330C85 /* Account.swift */,
 				BA8633101DDEFEF600330C85 /* Category.swift */,
 				BA8633111DDEFEF600330C85 /* Transaction.swift */,
@@ -7100,6 +7109,14 @@
 				BA86331F1DDF07C000330C85 /* index.html */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		BAED59EF1DE46BB100E5FE1C /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				BAED59F21DE46E8700E5FE1C /* NotEmpty.swift */,
+			);
+			name = Validation;
 			sourceTree = "<group>";
 		};
 		OBJ_1002 /* Command */ = {
@@ -8632,7 +8649,7 @@
 			path = "Packages/CLibreSSL-1.0.0/Sources/CLibreSSL";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_1346 /* Sources */,
@@ -8645,7 +8662,6 @@
 				OBJ_1357 /* Products */,
 				OBJ_6 /* Package.swift */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_657 /* include */ = {
@@ -10770,7 +10786,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_1357 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -12247,10 +12263,13 @@
 				OBJ_3662 /* main.swift in Sources */,
 				BA8633161DDEFEFC00330C85 /* Category.swift in Sources */,
 				BA8633191DDF02BD00330C85 /* Website.swift in Sources */,
+				BA8633231DDF0D6800330C85 /* TransactionsController.swift in Sources */,
 				BA8633171DDEFEFC00330C85 /* Transaction.swift in Sources */,
+				BAED59F31DE46E8700E5FE1C /* NotEmpty.swift in Sources */,
 				BA8633151DDEFEFC00330C85 /* Account.swift in Sources */,
 				BA86330E1DDEFEE700330C85 /* API.swift in Sources */,
 				BA86330A1DDEFECE00330C85 /* AccountsController.swift in Sources */,
+				BA8633211DDF0D5A00330C85 /* CategoriesController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
