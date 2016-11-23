@@ -1,3 +1,4 @@
+import Foundation
 import Vapor
 import HTTP
 
@@ -8,7 +9,10 @@ final class AccountsController: ResourceRepresentable {
     public func makeResource() -> Resource<Account> {
         return Resource(
             index: index,
-            store: store
+            store: store,
+            show: show,
+            replace: update,
+            destroy: destroy
         )
     }
     
@@ -25,8 +29,33 @@ final class AccountsController: ResourceRepresentable {
         
         var account = try Account(name: name)
         try account.save()
+        
         let id: Int = account.id!.int!
         return "Account created with ID: \(id)"
+    }
+    
+    func show(request: Request, item account: Account) throws -> ResponseRepresentable {
+        return try JSON(node: account)
+    }
+    
+    func update(request: Request, item account: Account) throws -> ResponseRepresentable {
+        var updatedAccount = account
+        
+        guard let name = request.data["name"]?.string else {
+            throw Abort.custom(status: Status.badRequest, message: "Name not provided")
+        }
+        
+        updatedAccount.name = try name.validated(by: NotEmpty())
+        updatedAccount.updatedAt = try Date().timestamp().validated(by: Timestamp())
+        
+        try updatedAccount.save()
+        
+        let id: Int = updatedAccount.id!.int!
+        return "Account with ID: \(id) updated"
+    }
+    
+    func destroy(request: Request, item user: Account) throws -> ResponseRepresentable {
+        return user
     }
 
 }

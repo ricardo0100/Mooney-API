@@ -15,6 +15,8 @@
 		BA8633191DDF02BD00330C85 /* Website.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633181DDF02BD00330C85 /* Website.swift */; };
 		BA8633211DDF0D5A00330C85 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633201DDF0D5A00330C85 /* CategoriesController.swift */; };
 		BA8633231DDF0D6800330C85 /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8633221DDF0D6800330C85 /* TransactionsController.swift */; };
+		BAEA45171DE52FD5003F8CEF /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEA45161DE52FD5003F8CEF /* Timestamp.swift */; };
+		BAEA451B1DE5C9D0003F8CEF /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEA451A1DE5C9D0003F8CEF /* DateExtension.swift */; };
 		BAED59F31DE46E8700E5FE1C /* NotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAED59F21DE46E8700E5FE1C /* NotEmpty.swift */; };
 		OBJ_1405 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1406 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
@@ -5039,6 +5041,8 @@
 		BA86331F1DDF07C000330C85 /* index.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = index.html; path = Resources/Views/index.html; sourceTree = "<group>"; };
 		BA8633201DDF0D5A00330C85 /* CategoriesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CategoriesController.swift; path = Controllers/CategoriesController.swift; sourceTree = "<group>"; };
 		BA8633221DDF0D6800330C85 /* TransactionsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TransactionsController.swift; path = Controllers/TransactionsController.swift; sourceTree = "<group>"; };
+		BAEA45161DE52FD5003F8CEF /* Timestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		BAEA451A1DE5C9D0003F8CEF /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DateExtension.swift; path = Extensions/DateExtension.swift; sourceTree = "<group>"; };
 		BAED59F21DE46E8700E5FE1C /* NotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmpty.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
@@ -7111,10 +7115,19 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		BAEA45191DE5C9A6003F8CEF /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BAEA451A1DE5C9D0003F8CEF /* DateExtension.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
 		BAED59EF1DE46BB100E5FE1C /* Validation */ = {
 			isa = PBXGroup;
 			children = (
 				BAED59F21DE46E8700E5FE1C /* NotEmpty.swift */,
+				BAEA45161DE52FD5003F8CEF /* Timestamp.swift */,
 			);
 			name = Validation;
 			sourceTree = "<group>";
@@ -7937,10 +7950,11 @@
 		OBJ_1346 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_1348 /* main.swift */,
 				BA8633051DDEFE8100330C85 /* Routes */,
 				BA8633041DDEFE4A00330C85 /* Controllers */,
 				BA8633061DDEFE8800330C85 /* Models */,
+				BAEA45191DE5C9A6003F8CEF /* Extensions */,
+				OBJ_1348 /* main.swift */,
 			);
 			path = Sources;
 			sourceTree = SOURCE_ROOT;
@@ -12261,8 +12275,10 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_3662 /* main.swift in Sources */,
+				BAEA451B1DE5C9D0003F8CEF /* DateExtension.swift in Sources */,
 				BA8633161DDEFEFC00330C85 /* Category.swift in Sources */,
 				BA8633191DDF02BD00330C85 /* Website.swift in Sources */,
+				BAEA45171DE52FD5003F8CEF /* Timestamp.swift in Sources */,
 				BA8633231DDF0D6800330C85 /* TransactionsController.swift in Sources */,
 				BA8633171DDEFEFC00330C85 /* Transaction.swift in Sources */,
 				BAED59F31DE46E8700E5FE1C /* NotEmpty.swift in Sources */,
