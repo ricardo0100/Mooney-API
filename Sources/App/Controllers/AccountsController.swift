@@ -18,6 +18,7 @@ final class AccountsController: ResourceRepresentable {
     
     func index(request: Request) throws -> ResponseRepresentable {
         let accounts = try Account.query().all()
+        let userID = request.headers["userID"]
         let json = try JSON(node: accounts)
         return json
     }

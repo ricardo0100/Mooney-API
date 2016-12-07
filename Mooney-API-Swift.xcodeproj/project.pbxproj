@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA864A641DF59D8100A21C4A /* AuthenticationMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA864A631DF59D8100A21C4A /* AuthenticationMiddleware.swift */; };
+		BA864A661DF5A40F00A21C4A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA864A651DF5A40F00A21C4A /* User.swift */; };
 		OBJ_1422 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1423 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
 		OBJ_1424 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Box.swift */; };
@@ -5037,6 +5039,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA864A631DF59D8100A21C4A /* AuthenticationMiddleware.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AuthenticationMiddleware.swift; path = Middlewares/AuthenticationMiddleware.swift; sourceTree = "<group>"; };
+		BA864A651DF5A40F00A21C4A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
 		OBJ_1001 /* Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bar.swift; sourceTree = "<group>"; };
@@ -7079,6 +7083,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA864A621DF59D2600A21C4A /* Middlewares */ = {
+			isa = PBXGroup;
+			children = (
+				BA864A631DF59D8100A21C4A /* AuthenticationMiddleware.swift */,
+			);
+			name = Middlewares;
+			sourceTree = "<group>";
+		};
 		OBJ_1000 /* Bar */ = {
 			isa = PBXGroup;
 			children = (
@@ -7932,6 +7944,7 @@
 				OBJ_1360 /* Extensions */,
 				OBJ_1362 /* Models */,
 				OBJ_1366 /* Routes */,
+				BA864A621DF59D2600A21C4A /* Middlewares */,
 			);
 			name = App;
 			path = Sources/App;
@@ -7961,6 +7974,7 @@
 				OBJ_1363 /* Account.swift */,
 				OBJ_1364 /* Category.swift */,
 				OBJ_1365 /* Transaction.swift */,
+				BA864A651DF5A40F00A21C4A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -8678,7 +8692,7 @@
 			path = "Packages/CLibreSSL-1.0.0/Sources/CLibreSSL";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -8690,7 +8704,6 @@
 				OBJ_1373 /* Resources */,
 				OBJ_1374 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_657 /* include */ = {
@@ -10801,7 +10814,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_1374 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -12284,7 +12297,9 @@
 				OBJ_3684 /* NotEmpty.swift in Sources */,
 				OBJ_3685 /* Timestamp.swift in Sources */,
 				OBJ_3686 /* AccountsController.swift in Sources */,
+				BA864A641DF59D8100A21C4A /* AuthenticationMiddleware.swift in Sources */,
 				OBJ_3687 /* CategoriesController.swift in Sources */,
+				BA864A661DF5A40F00A21C4A /* User.swift in Sources */,
 				OBJ_3688 /* TransactionsController.swift in Sources */,
 				OBJ_3689 /* DateExtension.swift in Sources */,
 				OBJ_3690 /* Account.swift in Sources */,

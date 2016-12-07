@@ -3,20 +3,18 @@ import VaporMySQL
 
 let drop = Droplet()
 
-
-//MARK: Database
 try drop.addProvider(VaporMySQL.Provider.self)
+
+drop.preparations.append(User.self)
 drop.preparations.append(Account.self)
 drop.preparations.append(Category.self)
 drop.preparations.append(Transaction.self)
 
+drop.middleware.append(AuthenticationMiddleware())
 
-//MARK: API
 let api = API()
 drop.collection(api)
 
-
-//MARK: Website
 let website = Website()
 drop.collection(website)
 
