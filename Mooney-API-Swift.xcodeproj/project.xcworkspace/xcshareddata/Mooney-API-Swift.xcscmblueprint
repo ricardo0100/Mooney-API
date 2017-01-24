@@ -4,12 +4,14 @@
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3" : 9223372036854775807,
     "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : 9223372036854775807,
     "34E74BE0B2A659E2130F1FF2D7695CFC7C0A5ED4" : 9223372036854775807
   },
-  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "35245D9F-5D66-4405-8D10-88BA04E7385D",
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "EF454633-2EB6-426A-88AA-CFE04AAC1141",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
-    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : "Mooney-API-Swift\/Packages\/Jay-1.0.0\/",
+    "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3" : "Mooney-API-Swift\/Packages\/Vapor-1.1.13\/",
+    "8FE2B4BB55A3C9D7B3B78FD1E2302636E924BDDC" : "Mooney-API-Swift\/Packages\/Jay-1.0.1\/",
     "34E74BE0B2A659E2130F1FF2D7695CFC7C0A5ED4" : "Mooney-API-Swift\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "Mooney-API-Swift",
@@ -20,6 +22,11 @@
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/ricardo0100\/mooney-api.git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "34E74BE0B2A659E2130F1FF2D7695CFC7C0A5ED4"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vapor\/vapor.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "52AFDBC9624F22D94526E36BBEE271C6D7FC65D3"
     },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/DanToml\/Jay.git",

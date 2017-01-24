@@ -26,17 +26,17 @@ class AuthenticationMiddleware: Middleware {
         let password = components[1]
         
         guard let user = try User.query().filter("email", email).first() else {
-            throw Abort.badRequest
+            throw Abort.custom(status: .unauthorized, message: Status.unauthorized.reasonPhrase)
         }
         
         if user.password != password {
-            throw Abort.badRequest
+            throw Abort.custom(status: .unauthorized, message: Status.unauthorized.reasonPhrase)
         }
         
         request.headers["userID"] = user.id!.string!
         
         return try next.respond(to: request)
-        
+
     }
     
 }

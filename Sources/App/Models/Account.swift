@@ -9,6 +9,7 @@ final class Account: Model {
     var name: Valid<NotEmpty>
     var createdAt: Valid<Timestamp>
     var updatedAt: Valid<Timestamp>
+    
 
     init(name: String) throws {
         self.name = try name.validated(by: NotEmpty())
@@ -38,6 +39,7 @@ final class Account: Model {
             accounts.string("name")
             accounts.string("createdAt")
             accounts.string("updatedAt")
+            accounts.parent(User.self, optional: false)
         }
     }
 
