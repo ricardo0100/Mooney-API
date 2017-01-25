@@ -10,12 +10,12 @@ drop.preparations.append(Account.self)
 drop.preparations.append(Category.self)
 drop.preparations.append(Transaction.self)
 
-drop.middleware.append(AuthenticationMiddleware())
-
-let api = API()
-drop.collection(api)
-
 let website = Website()
 drop.collection(website)
+
+let auth = AuthenticationMiddleware()
+
+let api = API()
+drop.grouped(auth).collection(api)
 
 drop.run()

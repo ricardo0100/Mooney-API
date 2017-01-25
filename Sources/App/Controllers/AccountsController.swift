@@ -17,18 +17,33 @@ final class AccountsController: ResourceRepresentable {
     }
     
     func index(request: Request) throws -> ResponseRepresentable {
-        let accounts = try Account.query().all()
-        let userID = request.headers["userID"]
+        guard let userEmail = request.headers["user"] else {
+            throw Abort.custom(status: Status.badRequest, message: "Authentication error")
+        }
+        
+        guard let user = try User.query().filter("email", userEmail).first() else {
+            throw Abort.custom(status: Status.badRequest, message: "Authentication error")
+        }
+        
+        let accounts = try Account.query().filter("user_id", user.id!).all()
         let json = try JSON(node: accounts)
         return json
     }
     
     func store(request: Request) throws -> ResponseRepresentable {
+        guard let userEmail = request.headers["user"] else {
+            throw Abort.custom(status: Status.badRequest, message: "Authentication error")
+        }
+        
+        guard let user = try User.query().filter("email", userEmail).first() else {
+            throw Abort.custom(status: Status.badRequest, message: "Authentication error")
+        }
+        
         guard let name = request.data["name"]?.string else {
             throw Abort.custom(status: Status.badRequest, message: "Name not provided")
         }
         
-        var account = try Account(name: name)
+        var account = try Account(name: name, userId: user.id)
         try account.save()
         
         let id: Int = account.id!.int!

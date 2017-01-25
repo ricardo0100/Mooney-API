@@ -33,7 +33,7 @@ class AuthenticationMiddleware: Middleware {
             throw Abort.custom(status: .unauthorized, message: Status.unauthorized.reasonPhrase)
         }
         
-        request.headers["userID"] = user.id!.string!
+        request.headers["user"] = user.email
         
         return try next.respond(to: request)
 

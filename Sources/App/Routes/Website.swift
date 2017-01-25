@@ -4,8 +4,6 @@ import Routing
 
 class Website: RouteCollection {
     
-    
-    
     typealias Wrapped = HTTP.Responder
     
     func build<B: RouteBuilder>(_ builder: B) where B.Value == Wrapped {

@@ -11,6 +11,8 @@ class API: RouteCollection {
         
         let accountsController = AccountsController()
         api.resource("accounts", accountsController)
+        
+//        let categoriesController = Cate
     }
     
 }
