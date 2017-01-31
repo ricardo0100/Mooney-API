@@ -33,10 +33,9 @@ class AuthenticationMiddleware: Middleware {
             throw Abort.custom(status: .unauthorized, message: Status.unauthorized.reasonPhrase)
         }
         
-        request.headers["user"] = user.email
+        request.storage["user"] = user
         
         return try next.respond(to: request)
-
     }
     
 }

@@ -9,8 +9,9 @@ final class Account: Model {
     var name: Valid<NotEmpty>
     var createdAt: Valid<Timestamp>
     var updatedAt: Valid<Timestamp>
-    var userId: Node?
     
+    //Relationships
+    var userId: Node?
     
     init(name: String, userId: Node?) throws {
         self.name = try name.validated(by: NotEmpty())
@@ -24,7 +25,7 @@ final class Account: Model {
         name = try (node.extract("name") as String).validated(by: NotEmpty())
         createdAt = try (node.extract("createdAt") as String).validated(by: Timestamp())
         updatedAt = try (node.extract("updatedAt") as String).validated(by: Timestamp())
-        userId = try (node.extract("user_id") as Node)
+        userId = try node.extract("user_id")
     }
     
     func makeNode(context: Context) throws -> Node {

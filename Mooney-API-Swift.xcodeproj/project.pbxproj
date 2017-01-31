@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA855B561E38C64F001E6092 /* ResourceRepresentableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA855B541E38C5FE001E6092 /* ResourceRepresentableExtensions.swift */; };
 		OBJ_1429 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1430 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
 		OBJ_1431 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Box.swift */; };
@@ -1587,7 +1588,7 @@
 		OBJ_3698 /* AccountsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1362 /* AccountsController.swift */; };
 		OBJ_3699 /* CategoriesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1363 /* CategoriesController.swift */; };
 		OBJ_3700 /* TransactionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1364 /* TransactionsController.swift */; };
-		OBJ_3701 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1366 /* DateExtension.swift */; };
+		OBJ_3701 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1366 /* DateExtensions.swift */; };
 		OBJ_3702 /* AuthenticationMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1368 /* AuthenticationMiddleware.swift */; };
 		OBJ_3703 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1370 /* Account.swift */; };
 		OBJ_3704 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1371 /* Category.swift */; };
@@ -5044,6 +5045,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA855B541E38C5FE001E6092 /* ResourceRepresentableExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceRepresentableExtensions.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
 		OBJ_1000 /* FrameSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSerializer.swift; sourceTree = "<group>"; };
@@ -5376,7 +5378,7 @@
 		OBJ_1362 /* AccountsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsController.swift; sourceTree = "<group>"; };
 		OBJ_1363 /* CategoriesController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesController.swift; sourceTree = "<group>"; };
 		OBJ_1364 /* TransactionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsController.swift; sourceTree = "<group>"; };
-		OBJ_1366 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		OBJ_1366 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		OBJ_1368 /* AuthenticationMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationMiddleware.swift; sourceTree = "<group>"; };
 		OBJ_137 /* bss_acpt.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bss_acpt.c; sourceTree = "<group>"; };
 		OBJ_1370 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
@@ -7980,7 +7982,8 @@
 		OBJ_1365 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				OBJ_1366 /* DateExtension.swift */,
+				OBJ_1366 /* DateExtensions.swift */,
+				BA855B541E38C5FE001E6092 /* ResourceRepresentableExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -12313,12 +12316,13 @@
 			buildActionMask = 0;
 			files = (
 				OBJ_3695 /* main.swift in Sources */,
+				BA855B561E38C64F001E6092 /* ResourceRepresentableExtensions.swift in Sources */,
 				OBJ_3696 /* NotEmpty.swift in Sources */,
 				OBJ_3697 /* Timestamp.swift in Sources */,
 				OBJ_3698 /* AccountsController.swift in Sources */,
 				OBJ_3699 /* CategoriesController.swift in Sources */,
 				OBJ_3700 /* TransactionsController.swift in Sources */,
-				OBJ_3701 /* DateExtension.swift in Sources */,
+				OBJ_3701 /* DateExtensions.swift in Sources */,
 				OBJ_3702 /* AuthenticationMiddleware.swift in Sources */,
 				OBJ_3703 /* Account.swift in Sources */,
 				OBJ_3704 /* Category.swift in Sources */,

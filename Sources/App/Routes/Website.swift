@@ -10,7 +10,8 @@ class Website: RouteCollection {
         let website = builder.grouped("")
         
         website.get { request in
-            return try drop.view.make("index.html")
+            return "👷🏼 Under Construction 🛠"
+//            return try drop.view.make("index.html")
         }
         
     }

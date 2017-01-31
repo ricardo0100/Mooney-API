@@ -26,12 +26,20 @@ final class Transaction: Model {
     var type: String
     var value: Double
     
-    init(name: String) throws {
+    //Relationships
+    var userId: Node?
+    var categoryId: Node?
+    var accountId: Node?
+    
+    init(name: String, userId: Node?, categoryId: Node?, accountId: Node?) throws {
         self.name = try name.validated(by: NotEmpty())
         self.createdAt = try Date().timestamp().validated(by: Timestamp())
         self.updatedAt = try Date().timestamp().validated(by: Timestamp())
         self.type = TransactionTypes.Debit.rawValue
         self.value = 0.0
+        self.userId = userId
+        self.categoryId = categoryId
+        self.accountId = accountId
     }
     
     init(node: Node, in context: Context) throws {
@@ -41,6 +49,9 @@ final class Transaction: Model {
         updatedAt = try (node.extract("updatedAt") as String).validated(by: Timestamp())
         type = try (node.extract("type") as String)
         value = try (node.extract("value") as Double)
+        userId = try node.extract("user_id")
+        categoryId = try node.extract("category_id")
+        accountId = try node.extract("account_id")
     }
     
     func makeNode(context: Context) throws -> Node {
@@ -50,7 +61,10 @@ final class Transaction: Model {
             "createdAt": createdAt.value,
             "updatedAt": updatedAt.value,
             "type": type,
-            "value": value
+            "value": value,
+            "user_id": userId,
+            "category_id": categoryId,
+            "account_id": accountId
             ])
     }
     
@@ -63,6 +77,8 @@ final class Transaction: Model {
             accounts.string("type")
             accounts.double("value")
             accounts.parent(User.self, optional: false)
+            accounts.parent(Category.self, optional: false)
+            accounts.parent(Account.self, optional: false)
         }
     }
     
