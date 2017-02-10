@@ -3,10 +3,6 @@ import Vapor
 
 class Timestamp: ValidationSuite {
     
-    enum TimestampErrors: Error {
-        case invalidTimestamp
-    }
-    
     //Regex for: YYYY-MM-DD HH:MM:SS
     static let regex = try! NSRegularExpression(pattern: "\\d\\d\\d\\d-\\d\\d-\\d\\d \\d\\d:\\d\\d:\\d\\d", options: .caseInsensitive)
     
@@ -15,7 +11,7 @@ class Timestamp: ValidationSuite {
         //TODO: Validate if is valid date
         let valid = x.location != NSNotFound
         if !valid {
-            throw TimestampErrors.invalidTimestamp
+            throw Abort.custom(status: .badRequest, message: "Invalid Timestamp")
         }
     }
     

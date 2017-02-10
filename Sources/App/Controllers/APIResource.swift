@@ -16,7 +16,7 @@ class APIResource<T: APIModel>: ResourceRepresentable {
     
     func index(request: Request) throws -> ResponseRepresentable {
         let user = try request.user()
-        let items = try T.fetchByUser(user)
+        let items = try T.fetchBy(user: user)
         let json = try JSON(node: items)
         return json
     }

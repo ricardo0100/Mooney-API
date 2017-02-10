@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BA1440691E4DE1FC00D3F047 /* NotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1440601E4DE1A300D3F047 /* NotEmpty.swift */; };
+		BA14406A1E4DE1FC00D3F047 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1440611E4DE1A300D3F047 /* Timestamp.swift */; };
+		BA14406B1E4DE1FC00D3F047 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1440641E4DE1B500D3F047 /* TransactionType.swift */; };
+		BA14406D1E4DE55300D3F047 /* NotNegative.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA14406C1E4DE55300D3F047 /* NotNegative.swift */; };
+		BA14406F1E4DF08D00D3F047 /* ContentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA14406E1E4DF08D00D3F047 /* ContentExtensions.swift */; };
 		OBJ_1453 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1454 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
 		OBJ_1455 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Box.swift */; };
@@ -1649,8 +1654,6 @@
 		OBJ_3798 /* Settings.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_1442 /* Settings.framework */; };
 		OBJ_3799 /* Vapor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = OBJ_1443 /* Vapor.framework */; };
 		OBJ_3847 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1379 /* main.swift */; };
-		OBJ_3848 /* NotEmpty.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1380 /* NotEmpty.swift */; };
-		OBJ_3849 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1381 /* Timestamp.swift */; };
 		OBJ_3850 /* APIResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1383 /* APIResource.swift */; };
 		OBJ_3851 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1385 /* DateExtensions.swift */; };
 		OBJ_3852 /* RequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_1386 /* RequestExtensions.swift */; };
@@ -5470,6 +5473,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BA1440601E4DE1A300D3F047 /* NotEmpty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotEmpty.swift; sourceTree = "<group>"; };
+		BA1440611E4DE1A300D3F047 /* Timestamp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		BA1440641E4DE1B500D3F047 /* TransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
+		BA14406C1E4DE55300D3F047 /* NotNegative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotNegative.swift; sourceTree = "<group>"; };
+		BA14406E1E4DF08D00D3F047 /* ContentExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentExtensions.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
 		OBJ_1000 /* FrameSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSerializer.swift; sourceTree = "<group>"; };
@@ -5817,12 +5825,10 @@
 		OBJ_1377 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		OBJ_1379 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		OBJ_138 /* bss_bio.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bss_bio.c; sourceTree = "<group>"; };
-		OBJ_1380 /* NotEmpty.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotEmpty.swift; sourceTree = "<group>"; };
-		OBJ_1381 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		OBJ_1383 /* APIResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIResource.swift; sourceTree = "<group>"; };
 		OBJ_1385 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		OBJ_1386 /* RequestExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestExtensions.swift; sourceTree = "<group>"; };
-		OBJ_1388 /* APIAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIAuthentication.swift; sourceTree = "<group>"; };
+		OBJ_1388 /* APIAuthentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIAuthentication.swift; path = ../Middlewares/APIAuthentication.swift; sourceTree = "<group>"; };
 		OBJ_139 /* bss_conn.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bss_conn.c; sourceTree = "<group>"; };
 		OBJ_1390 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		OBJ_1391 /* APIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIModel.swift; sourceTree = "<group>"; };
@@ -7603,6 +7609,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BA14405F1E4DE1A300D3F047 /* Validation */ = {
+			isa = PBXGroup;
+			children = (
+				BA1440601E4DE1A300D3F047 /* NotEmpty.swift */,
+				BA1440611E4DE1A300D3F047 /* Timestamp.swift */,
+				BA1440641E4DE1B500D3F047 /* TransactionType.swift */,
+				BA14406C1E4DE55300D3F047 /* NotNegative.swift */,
+			);
+			path = Validation;
+			sourceTree = "<group>";
+		};
 		OBJ_1002 /* Console */ = {
 			isa = PBXGroup;
 			children = (
@@ -8508,13 +8525,10 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_1379 /* main.swift */,
-				OBJ_1380 /* NotEmpty.swift */,
-				OBJ_1381 /* Timestamp.swift */,
 				OBJ_1396 /* Website */,
 				OBJ_1382 /* API */,
-				OBJ_1387 /* Middlewares */,
 				OBJ_1389 /* Models */,
-				OBJ_1384 /* Extensions */,
+				OBJ_1384 /* Utils */,
 			);
 			name = App;
 			path = Sources/App;
@@ -8524,32 +8538,28 @@
 			isa = PBXGroup;
 			children = (
 				OBJ_1397 /* API.swift */,
+				OBJ_1388 /* APIAuthentication.swift */,
 				OBJ_1383 /* APIResource.swift */,
 			);
 			name = API;
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		OBJ_1384 /* Extensions */ = {
+		OBJ_1384 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				OBJ_1385 /* DateExtensions.swift */,
 				OBJ_1386 /* RequestExtensions.swift */,
+				BA14406E1E4DF08D00D3F047 /* ContentExtensions.swift */,
 			);
+			name = Utils;
 			path = Extensions;
-			sourceTree = "<group>";
-		};
-		OBJ_1387 /* Middlewares */ = {
-			isa = PBXGroup;
-			children = (
-				OBJ_1388 /* APIAuthentication.swift */,
-			);
-			path = Middlewares;
 			sourceTree = "<group>";
 		};
 		OBJ_1389 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				BA14405F1E4DE1A300D3F047 /* Validation */,
 				OBJ_1391 /* APIModel.swift */,
 				OBJ_1390 /* Account.swift */,
 				OBJ_1392 /* Category.swift */,
@@ -12988,11 +12998,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				BA14406D1E4DE55300D3F047 /* NotNegative.swift in Sources */,
+				BA14406A1E4DE1FC00D3F047 /* Timestamp.swift in Sources */,
+				BA14406B1E4DE1FC00D3F047 /* TransactionType.swift in Sources */,
 				OBJ_3847 /* main.swift in Sources */,
-				OBJ_3848 /* NotEmpty.swift in Sources */,
-				OBJ_3849 /* Timestamp.swift in Sources */,
 				OBJ_3850 /* APIResource.swift in Sources */,
+				BA14406F1E4DF08D00D3F047 /* ContentExtensions.swift in Sources */,
 				OBJ_3851 /* DateExtensions.swift in Sources */,
+				BA1440691E4DE1FC00D3F047 /* NotEmpty.swift in Sources */,
 				OBJ_3852 /* RequestExtensions.swift in Sources */,
 				OBJ_3853 /* APIAuthentication.swift in Sources */,
 				OBJ_3854 /* Account.swift in Sources */,

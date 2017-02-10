@@ -8,18 +8,15 @@ protocol APIModel: RequestInitializable, Model {
     
     associatedtype APIModel: Model
     
-    var userId: Node? { get set }
+    var userId: Node { get set }
     
-    static func fetchByUser(_ user: User) throws -> [APIModel]
-    
-    func belongsToUser(_ user: User) -> Bool
     func updateWithRequest(request: Request) throws
-    
+
 }
 
 extension APIModel {
     
-    static func fetchByUser(_ user: User) throws -> [APIModel] {
+    static func fetchBy(user: User) throws -> [APIModel] {
         return try APIModel.query().filter("user_id", user.id!).all()
     }
     
@@ -31,11 +28,12 @@ extension APIModel {
         return try parent(userId)
     }
     
-    static func extractStringFromData(_ data: Content, withField field: String) throws -> String {
-        guard let value = data[field]?.string else {
-            throw Abort.custom(status: .badRequest, message: "\(field) field is missing")
+    static func fetchBy(id: Int) throws -> APIModel {
+        guard let item = try APIModel.query().filter("id", id).first() else {
+            throw Abort.custom(status: .badRequest, message: "\(APIModel.self) with id \(id) not found")
         }
-        return value
+        
+        return item
     }
     
 }

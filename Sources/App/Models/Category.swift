@@ -5,6 +5,12 @@ import HTTP
 
 final class Category: APIModel {
     
+    typealias APIModel = Account
+    
+    public static var entity: String {
+        return "categories"
+    }
+    
     var id: Node?
     var exists: Bool = false
     var name: Valid<NotEmpty>
@@ -12,26 +18,13 @@ final class Category: APIModel {
     var updatedAt: Valid<Timestamp>
     
     //Relationships
-    var userId: Node?
-    
-    public static var entity: String {
-        return "categories"
-    }
-    
-    typealias APIModel = Account
+    var userId: Node
     
     init(request: Request) throws {
-        self.userId = try request.user().id
+        self.userId = try request.userId()
         self.createdAt = try Date().timestamp().validated(by: Timestamp())
         self.updatedAt = try Date().timestamp().validated(by: Timestamp())
-        self.name = try APIModel.extractStringFromData(request.data, withField: "name").validated(by: NotEmpty())
-    }
-    
-    init(name: String, userId: Node?) throws {
-        self.name = try name.validated(by: NotEmpty())
-        self.createdAt = try Date().timestamp().validated(by: Timestamp())
-        self.updatedAt = try Date().timestamp().validated(by: Timestamp())
-        self.userId = userId
+        self.name = try request.data.extractString("name").validated(by: NotEmpty())
     }
     
     init(node: Node, in context: Context) throws {
@@ -67,7 +60,7 @@ final class Category: APIModel {
     }
     
     func updateWithRequest(request: Request) throws {
-        self.name = try APIModel.extractStringFromData(request.data, withField: "name").validated(by: NotEmpty())
+        self.name = try request.data.extractString("name").validated(by: NotEmpty())
     }
     
 }

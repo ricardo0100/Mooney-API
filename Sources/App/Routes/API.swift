@@ -18,6 +18,7 @@ class API: RouteCollection {
 
         api.resource("accounts", APIResource<Account>())
         api.resource("categories", APIResource<Category>())
+        api.resource("transactions", APIResource<Transaction>())
     }
 
 }
