@@ -1,9 +1,8 @@
 import Vapor
 import Fluent
+import Auth
 
 final class User: Model {
-    
-    static let tableName = "users"
     
     var id: Node?
     var exists: Bool = false
@@ -30,7 +29,7 @@ final class User: Model {
     }
     
     static func prepare(_ database: Database) throws {
-        try database.create(self.tableName) { users in
+        try database.create("users") { users in
             users.id()
             users.string("email")
             users.string("password")
@@ -38,7 +37,31 @@ final class User: Model {
     }
     
     static func revert(_ database: Database) throws {
-        try database.delete(self.tableName)
+        try database.delete("users")
+    }
+    
+}
+
+extension User: Auth.User {
+    
+    static func authenticate(credentials: Credentials) throws -> Auth.User {
+        switch credentials {
+        case let basicAuth as APIKey:
+            guard let user = try User.query().filter("email", basicAuth.id).first() else {
+                throw Abort.custom(status: .forbidden, message: "Invalid user.")
+            }
+            if (user.password != basicAuth.secret) {
+                throw Abort.custom(status: .forbidden, message: "Invalid password.")
+            }
+            return user
+        default:
+            let type = type(of: credentials)
+            throw Abort.custom(status: .forbidden, message: "Unsupported credential type: \(type).")
+        }
+    }
+    
+    static func register(credentials: Credentials) throws -> Auth.User {
+        throw Abort.custom(status: .internalServerError, message: "Internal error")
     }
     
 }

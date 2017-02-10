@@ -2,21 +2,12 @@ import Foundation
 import Vapor
 import Fluent
 
+enum TransactionTypes: String {
+    case Debit
+    case Credit
+}
+
 final class Transaction: Model {
-    
-    enum TransactionTypes: String {
-        case Debit = "Debit"
-        case Credit = "Credit"
-        
-        static func fromString(_ string: String) -> TransactionTypes {
-            switch string {
-            case Credit.rawValue:
-                return Credit
-            default:
-                return Debit
-            }
-        }
-    }
     
     var id: Node?
     var exists: Bool = false

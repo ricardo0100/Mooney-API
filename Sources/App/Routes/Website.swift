@@ -10,7 +10,9 @@ class Website: RouteCollection {
         let website = builder.grouped("")
         
         website.get { request in
-            return "👷🏼 Under Construction 🛠"
+//            return "👷🏼 Under Construction 🛠"
+            
+            return try JSON(node: User.query().first())
 //            return try drop.view.make("index.html")
         }
         

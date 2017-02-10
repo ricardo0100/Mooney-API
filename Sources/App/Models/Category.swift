@@ -1,8 +1,9 @@
 import Foundation
 import Vapor
 import Fluent
+import HTTP
 
-final class Category: Model {
+final class Category: APIModel {
     
     var id: Node?
     var exists: Bool = false
@@ -10,12 +11,21 @@ final class Category: Model {
     var createdAt: Valid<Timestamp>
     var updatedAt: Valid<Timestamp>
     
+    //Relationships
+    var userId: Node?
+    
     public static var entity: String {
         return "categories"
     }
     
-    //Relationships
-    var userId: Node?
+    typealias APIModel = Account
+    
+    init(request: Request) throws {
+        self.userId = try request.user().id
+        self.createdAt = try Date().timestamp().validated(by: Timestamp())
+        self.updatedAt = try Date().timestamp().validated(by: Timestamp())
+        self.name = try APIModel.extractStringFromData(request.data, withField: "name").validated(by: NotEmpty())
+    }
     
     init(name: String, userId: Node?) throws {
         self.name = try name.validated(by: NotEmpty())
@@ -56,8 +66,8 @@ final class Category: Model {
         try database.delete("categories")
     }
     
-    func user() throws -> Parent<User> {
-        return try parent(userId)
+    func updateWithRequest(request: Request) throws {
+        self.name = try APIModel.extractStringFromData(request.data, withField: "name").validated(by: NotEmpty())
     }
     
 }

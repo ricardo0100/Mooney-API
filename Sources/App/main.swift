@@ -1,5 +1,8 @@
 import Vapor
 import VaporMySQL
+import Auth
+import Cookies
+import Foundation
 
 let drop = Droplet()
 
@@ -13,9 +16,10 @@ drop.preparations.append(Transaction.self)
 let website = Website()
 drop.collection(website)
 
-let auth = AuthenticationMiddleware()
+let auth = AuthMiddleware(user: User.self)
+drop.middleware.append(auth)
 
 let api = API()
-drop.grouped(auth).collection(api)
+drop.collection(api)
 
 drop.run()
