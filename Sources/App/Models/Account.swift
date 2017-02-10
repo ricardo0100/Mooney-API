@@ -42,7 +42,7 @@ final class Account: APIModel {
     }
 
     static func prepare(_ database: Database) throws {
-        try database.create("categories") { category in
+        try database.create("accounts") { category in
             category.id()
             category.string("name")
             category.string("createdAt")
@@ -52,7 +52,7 @@ final class Account: APIModel {
     }
     
     static func revert(_ database: Database) throws {
-        try database.delete("categories")
+        try database.delete("accounts")
     }
     
     func updateWithRequest(request: Request) throws {
