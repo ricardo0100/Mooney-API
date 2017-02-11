@@ -27,7 +27,8 @@ final class Transaction: APIModel {
     var accountId: Node
     
     init(request: Request) throws {
-        self.userId = try request.userId()
+        let user = try request.user()
+        self.userId = user.id!
         self.createdAt = try Date().timestamp().validated(by: Timestamp())
         self.updatedAt = try Date().timestamp().validated(by: Timestamp())
         
@@ -35,20 +36,13 @@ final class Transaction: APIModel {
         self.type = try request.data.extractString("type").validated(by: TransactionType())
         self.value = try request.data.extractDouble("value").validated(by: NotNegative())
         
-        let category = try Category.fetchBy(id: try request.data.extractInt("category_id"))
-        if try !category.belongsToUser(request.user()) {
-            throw Abort.custom(status: .badRequest, message: "Category not found")
-        }
-        self.categoryId = category.id!
-        
-        let account = try Account.fetchBy(id: try request.data.extractInt("account_id"))
-        if try !account.belongsToUser(request.user()) {
-            throw Abort.custom(status: .badRequest, message: "Account not found")
-        }
-        self.accountId = account.id!
+        self.categoryId = try Node(request.data.extractInt("category_id").validated(by: UserOwns<Category>(user: user)).value)
+        self.accountId = try Node(request.data.extractInt("account_id").validated(by: UserOwns<Account>(user: user)).value)
     }
     
     init(node: Node, in context: Context) throws {
+        userId = try node.extract("user_id")
+        
         id = try node.extract("id")
         createdAt = try (node.extract("createdAt") as String).validated(by: Timestamp())
         updatedAt = try (node.extract("updatedAt") as String).validated(by: Timestamp())
@@ -57,7 +51,6 @@ final class Transaction: APIModel {
         type = try (node.extract("type") as String).validated(by: TransactionType())
         value = try (node.extract("value") as Double).validated(by: NotNegative())
         
-        userId = try node.extract("user_id")
         categoryId = try node.extract("category_id")
         accountId = try node.extract("account_id")
     }
@@ -95,21 +88,14 @@ final class Transaction: APIModel {
     }
     
     func updateWithRequest(request: Request) throws {
+        let user = try request.user()
+        
         self.name = try request.data.extractString("name").validated(by: NotEmpty())
         self.type = try request.data.extractString("type").validated(by: TransactionType())
         self.value = try request.data.extractDouble("value").validated(by: NotNegative())
         
-        let category = try Category.fetchBy(id: try request.data.extractInt("category_id"))
-        if try !category.belongsToUser(request.user()) {
-            throw Abort.custom(status: .badRequest, message: "Category not found")
-        }
-        self.categoryId = category.id!
-        
-        let account = try Account.fetchBy(id: try request.data.extractInt("account_id"))
-        if try !account.belongsToUser(request.user()) {
-            throw Abort.custom(status: .badRequest, message: "Account not found")
-        }
-        self.accountId = account.id!
+        self.categoryId = try Node(request.data.extractInt("category_id").validated(by: UserOwns<Category>(user: user)).value)
+        self.accountId = try Node(request.data.extractInt("account_id").validated(by: UserOwns<Account>(user: user)).value)
     }
     
 }

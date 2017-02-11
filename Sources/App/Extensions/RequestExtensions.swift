@@ -10,12 +10,4 @@ extension Request {
         return user
     }
     
-    func userId() throws -> Node {
-        guard let userId = try self.user().id else {
-            throw Abort.serverError
-        }
-        
-        return userId
-    }
-    
 }

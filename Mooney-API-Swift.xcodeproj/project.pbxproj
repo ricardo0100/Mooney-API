@@ -12,6 +12,7 @@
 		BA14406B1E4DE1FC00D3F047 /* TransactionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1440641E4DE1B500D3F047 /* TransactionType.swift */; };
 		BA14406D1E4DE55300D3F047 /* NotNegative.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA14406C1E4DE55300D3F047 /* NotNegative.swift */; };
 		BA14406F1E4DF08D00D3F047 /* ContentExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA14406E1E4DF08D00D3F047 /* ContentExtensions.swift */; };
+		BA9DE3901E4E7CB900ACF6A3 /* UserOwns.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9DE38F1E4E7CB900ACF6A3 /* UserOwns.swift */; };
 		OBJ_1453 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_9 /* Array.swift */; };
 		OBJ_1454 /* Bool+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* Bool+String.swift */; };
 		OBJ_1455 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Box.swift */; };
@@ -5478,6 +5479,7 @@
 		BA1440641E4DE1B500D3F047 /* TransactionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransactionType.swift; sourceTree = "<group>"; };
 		BA14406C1E4DE55300D3F047 /* NotNegative.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotNegative.swift; sourceTree = "<group>"; };
 		BA14406E1E4DF08D00D3F047 /* ContentExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentExtensions.swift; sourceTree = "<group>"; };
+		BA9DE38F1E4E7CB900ACF6A3 /* UserOwns.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserOwns.swift; sourceTree = "<group>"; };
 		OBJ_10 /* Bool+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+String.swift"; sourceTree = "<group>"; };
 		OBJ_100 /* bio_lib.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = bio_lib.c; sourceTree = "<group>"; };
 		OBJ_1000 /* FrameSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameSerializer.swift; sourceTree = "<group>"; };
@@ -7616,6 +7618,7 @@
 				BA1440611E4DE1A300D3F047 /* Timestamp.swift */,
 				BA1440641E4DE1B500D3F047 /* TransactionType.swift */,
 				BA14406C1E4DE55300D3F047 /* NotNegative.swift */,
+				BA9DE38F1E4E7CB900ACF6A3 /* UserOwns.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -9284,7 +9287,7 @@
 			path = "Packages/CLibreSSL-1.0.0/Sources/CLibreSSL";
 			sourceTree = SOURCE_ROOT;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -9295,7 +9298,6 @@
 				OBJ_1402 /* Resources */,
 				OBJ_1403 /* Products */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_657 /* include */ = {
@@ -11480,7 +11482,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_1403 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -13007,6 +13009,7 @@
 				OBJ_3851 /* DateExtensions.swift in Sources */,
 				BA1440691E4DE1FC00D3F047 /* NotEmpty.swift in Sources */,
 				OBJ_3852 /* RequestExtensions.swift in Sources */,
+				BA9DE3901E4E7CB900ACF6A3 /* UserOwns.swift in Sources */,
 				OBJ_3853 /* APIAuthentication.swift in Sources */,
 				OBJ_3854 /* Account.swift in Sources */,
 				OBJ_3855 /* APIModel.swift in Sources */,

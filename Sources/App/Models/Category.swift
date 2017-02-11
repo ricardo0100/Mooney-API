@@ -5,7 +5,7 @@ import HTTP
 
 final class Category: APIModel {
     
-    typealias APIModel = Account
+    typealias APIModel = Category
     
     public static var entity: String {
         return "categories"
@@ -21,7 +21,7 @@ final class Category: APIModel {
     var userId: Node
     
     init(request: Request) throws {
-        self.userId = try request.userId()
+        self.userId = try request.user().id!
         self.createdAt = try Date().timestamp().validated(by: Timestamp())
         self.updatedAt = try Date().timestamp().validated(by: Timestamp())
         self.name = try request.data.extractString("name").validated(by: NotEmpty())
