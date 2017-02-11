@@ -45,23 +45,23 @@ final class User: Model {
 extension User: Auth.User {
     
     static func authenticate(credentials: Credentials) throws -> Auth.User {
+        let error = Abort.custom(status: .forbidden, message: "Invalid credentials")
         switch credentials {
         case let basicAuth as APIKey:
             guard let user = try User.query().filter("email", basicAuth.id).first() else {
-                throw Abort.custom(status: .forbidden, message: "Invalid user.")
+                throw error
             }
             if (user.password != basicAuth.secret) {
-                throw Abort.custom(status: .forbidden, message: "Invalid password.")
+                throw error
             }
             return user
         default:
-            let type = type(of: credentials)
-            throw Abort.custom(status: .forbidden, message: "Unsupported credential type: \(type).")
+            throw error
         }
     }
     
     static func register(credentials: Credentials) throws -> Auth.User {
-        throw Abort.custom(status: .internalServerError, message: "Internal error")
+        throw Abort.serverError
     }
     
 }
